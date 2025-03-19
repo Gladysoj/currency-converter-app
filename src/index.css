@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Gidole", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ADB2D4;
+}
+
+#root {
+    width: 100%;
+}
+
+.currency-converter {
+    margin: 0 auto;
+    padding: 40px 30px 50px;
+    border-radius: 8px;
+    max-width: 410px;
+    backdrop-filter: blur(30px);
+    background-color: #C7D9DD; 
+}
+
+.currency-converter .converter-title{
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.currency-converter .converter-form {
+    margin-top: 45px;
+}
+
+.converter-form .form-group {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.converter-form .form-group .form-label {
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 9px;
+    font-size: 1rem;
+}
+
+.converter-form .form-group .form-input {
+    min-height: 48px;
+    border-radius: 6px;
+    background: #C7D9DD;
+    border: 1px solid #C7D9DD;
+}
