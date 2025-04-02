@@ -27,33 +27,19 @@ body{
   .form-group {
     display: flex;
     flex-direction: column;
-  }
-  
-  .form-currency-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .currency-select {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .swap-icon {
-    cursor: pointer;
-  }
-  
-  .submit-button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .submit-button.loading {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+}
+
+.converter-form .form-group .form-label {
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 9px;
+    font-size: 1rem;
+}
+
+.converter-form .form-group .form-input {
+    min-height: 48px;
+    border-radius: 6px;
+    background: #C7D9DD;
+    border: 1px solid #C7D9DD;
+}

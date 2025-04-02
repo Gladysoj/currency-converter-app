@@ -105,34 +105,115 @@ const CurrencySelect = ({ selectedCurrency, handleCurrency, flagUrl }) => (
       <option value="LAK">LAK</option>
       <option value="KZT">KZT</option>
       <option value="KYD">KYD</option>
+      <option value="KZT">KZT</option>
+      <option value="LAK">LAK</option>
+      <option value="LBP">LBP</option>
+      <option value="LKR">LKR</option>
+      <option value="LRD">LRD</option>
+      <option value="LSL">LSL</option>
+      <option value="LYD">LYD</option>
+      <option value="MAD">MAD</option>
+      <option value="MDL">MDL</option>
+      <option value="MGA">MGA</option>
+      <option value="MKD">MKD</option>
+      <option value="MMK">MMK</option>
+      <option value="MNT">MNT</option>
+      <option value="MOP">MOP</option>
+      <option value="MRU">MRU</option>
+      <option value="MUR">MUR</option>
+      <option value="MVR">MVR</option>
+      <option value="MWK">MWK</option>
+      <option value="MXN">MXN</option>
+      <option value="MYR">MYR</option>
+      <option value="MZN">MZN</option>
+      <option value="NAD">NAD</option>
+      <option value="NIO">NIO</option>
+      <option value="NOK">NOK</option>
+      <option value="NPR">NPR</option>
+      <option value="NZD">NZD</option>
+      <option value="OMR">OMR</option>
+      <option value="PAB">PAB</option>
+      <option value="PEN">PEN</option>
+      <option value="PGK">PGK</option>
+      <option value="PHP">PHP</option>
+      <option value="PKR">PKR</option>
+      <option value="PLN">PLN</option>
+      <option value="PYG">PYG</option>
+      <option value="QAR">QAR</option>
+      <option value="RON">RON</option>
+      <option value="RSD">RSD</option>
+      <option value="RUB">RUB</option>
+      <option value="RWF">RWF</option>
+      <option value="SAR">SAR</option>
+      <option value="SBD">SBD</option>
+      <option value="SCR">SCR</option>
+      <option value="SDG">SDG</option>
+      <option value="SHP">SHP</option>
+      <option value="SLE">SLE</option>
+      <option value="SLL">SLL</option>
+      <option value="SOS">SOS</option>
+      <option value="SRD">SRD</option>
+      <option value="SSP">SSP</option>
+      <option value="STN">STN</option>
+      <option value="SYP">SYP</option>
+      <option value="SZL">SZL</option>
+      <option value="THB">THB</option>
+      <option value="TJS">TJS</option>
+      <option value="TMT">TMT</option>
+      <option value="TND">TND</option>
+      <option value="TOP">TOP</option>
+      <option value="TRY">TRY</option>
+      <option value="TTD">TTD</option>
+      <option value="TVD">TVD</option>
+      <option value="TWD">TWD</option>
+      <option value="TZS">TZS</option>
+      <option value="UAH">UAH</option>
+      <option value="UGX">UGX</option>
+      <option value="UYU">UYU</option>
+      <option value="UZS">UZS</option>
+      <option value="VES">VES</option>
+      <option value="VND">VND</option>
+      <option value="VUV">VUV</option>
+      <option value="WST">WST</option>
+      <option value="XAF">XAF</option>
+      <option value="XCD">XCD</option>
+      <option value="XOF">XOF</option>
+      <option value="XPF">XPF</option>
+      <option value="YER">YER</option>
+      <option value="ZAR">ZAR</option>
+      <option value="ZMW">MDL</option>
+      <option value="ZWL">MDL</option>
+     
+      
+      
 
-      {/* Add more currencies as needed */}
+      {}
     </select>
   </div>
 );
 
 const App = () => {
-  const [amount, setAmount] = useState(1000); // Default amount
-  const [fromCurrency, setFromCurrency] = useState("AED"); // Default from currency
-  const [toCurrency, setToCurrency] = useState("NGN"); // Default to currency
-  const [result, setResult] = useState(""); // Conversion result
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [amount, setAmount] = useState(1000); 
+  const [fromCurrency, setFromCurrency] = useState("AED"); 
+  const [toCurrency, setToCurrency] = useState("NGN"); 
+  const [result, setResult] = useState(""); 
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Function to get flag URL based on currency code
+  
   const getFlagUrl = (currency) => `https://flagsapi.com/${currency.slice(0, 2)}/flat/64.png`;
 
-  // Swap currencies
+  
   const handleSwapCurrencies = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
 
-  // Fetch exchange rate from API
+  
   const getExchangeRate = async () => {
-    const API_KEY = `1ae8888299818a65c46eefdb`;   // Replace with your actual API key
+    const API_KEY = `1ae8888299818a65c46eefdb`;   
     const API_URL = ` https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}`;
 
-    if (isLoading || !amount) return; // Avoid fetch if loading or amount is empty
+    if (isLoading || !amount) return; 
     setIsLoading(true);
 
     try {
@@ -148,13 +229,13 @@ const App = () => {
     }
   };
 
-  // Handle form submission
+  
   const handleFormSubmit = (e) => {
     e.preventDefault();
     getExchangeRate();
   };
 
-  // Fetch exchange rate on initial render or when dependencies change
+  
   useEffect(() => {
     getExchangeRate();
   }, [fromCurrency, toCurrency, amount]);
@@ -163,7 +244,7 @@ const App = () => {
     <div className="currency-converter">
       <h2 className="converter-title">Currency Converter</h2>
       <form className="converter-form" onSubmit={handleFormSubmit}>
-        {/* Amount Input */}
+        
         <div className="form-group">
           <label className="form-label">Enter Amount</label>
           <input
@@ -177,7 +258,7 @@ const App = () => {
           />
         </div>
 
-        {/* Currency Selection and Swap */}
+        
         <div className="form-group form-currency-group">
           <div className="form-section">
             <label className="form-label">From</label>
@@ -207,7 +288,7 @@ const App = () => {
           </div>
         </div>
 
-        {/* Submit Button */}
+        
         <button
           type="submit"
           className={`${isLoading ? "loading" : ""} submit-button`}
@@ -216,7 +297,7 @@ const App = () => {
           {isLoading ? "Fetching..." : "Get Exchange Rate"}
         </button>
 
-        {/* Result Display */}
+        
         <p className="exchange-rate-result">
           {isLoading ? "Getting exchange rate..." : result || "Enter amount and select currencies"}
         </p>
