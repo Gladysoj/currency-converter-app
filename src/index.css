@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Gidole", sans-serif;
-}
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+body{
     background-color: #ADB2D4;
+    padding-top: 10%;
+    font-family: "Gidole", sans-serif;
 }
 
 #root {
@@ -20,42 +12,48 @@ body {
 }
 
 .currency-converter {
-    margin: 0 auto;
-    padding: 40px 30px 50px;
-    border-radius: 8px;
-    max-width: 410px;
-    backdrop-filter: blur(30px);
-    background-color: #C7D9DD; 
-}
-
-.currency-converter .converter-title{
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.currency-converter .converter-form {
-    margin-top: 45px;
-}
-
-.converter-form .form-group {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #D5E5D5;
+  }
+  
+  .converter-form {
     display: flex;
-    margin-bottom: 30px;
     flex-direction: column;
-}
-
-.converter-form .form-group .form-label {
-    color: #fff;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 9px;
-    font-size: 1rem;
-}
-
-.converter-form .form-group .form-input {
-    min-height: 48px;
-    border-radius: 6px;
-    background: #C7D9DD;
-    border: 1px solid #C7D9DD;
-}
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-currency-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .currency-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .swap-icon {
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-button.loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
